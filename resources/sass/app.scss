@@ -1,0 +1,24 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+@import 'materialize.scss';
+
+nav{
+	.brand-logo{
+		margin-left:2%;
+	}
+}
+
+.parallax, .parallax-container{
+	background:rgba(0,0,0,0.8);
+}
+
+@media #{$medium-and-down} {
+	nav{
+		.brand-logo{
+			margin-left:0px;
+		}
+	}
+}
+
