@@ -15,9 +15,14 @@ Route::get('/','HomeController@home')->name('home');
 
 Auth::routes();
 
-
-Route::get('/larapress/admin','AdminController@loginForm');
+Route::get('/larapress/admin','AdminController@loginForm')->name('loginForm');
 
 Route::post('/larapress/admin','AdminController@loginValidation')->name('loginValidation');
 
-Route::get('/larapress/admin/dashboard','AdminController@dashboard')->name('dashboardAdmin');
+Route::get('/larapress/admin/close','AdminController@closeSession')->name('adminClose');
+
+Route::get('/larapress/admin/dashboard','AdminController@dashboard')->name('adminDashboard');
+
+Route::get('/larapress/admin/pages','AdminController@pages')->name('adminPages');
+
+Route::get('/larapress/admin/posts','AdminController@posts')->name('adminPosts');

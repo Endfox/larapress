@@ -15,8 +15,11 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('')
+            $table->string('title');
+            $table->longText('content');
+            $table->string('slug_url')->unique();
+            $table->unsignedBigInteger('admin_id');
+            $table->foreign('admin_id')->references('id')->on('admins');
             $table->timestamps();
         });
     }

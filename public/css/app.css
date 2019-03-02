@@ -9284,6 +9284,43 @@ nav div form {
   background-size: 250%;
 }
 
+#nav div {
+  margin-top: 2%;
+  font-size: 1.64rem;
+}
+
+.dropdown-content {
+  min-width: 200px;
+  margin: 0%;
+  margin-left: -1px;
+  z-index: 1;
+  max-height: auto;
+  padding-top: 3%;
+  background: none;
+}
+
+.dropdown-content li {
+  background: white;
+}
+
+#sidenavelements {
+  margin-top: 4.8%;
+  z-index: 0;
+}
+
+.main {
+  padding-top: 2%;
+  padding-left: 300px;
+}
+
+.col .card {
+  padding: 2%;
+}
+
+.col .card span {
+  text-align: center;
+}
+
 @media only screen and (max-width : 992px) {
   nav .brand-logo {
     margin-left: 0px;
@@ -9293,10 +9330,9 @@ nav div form {
     margin-top: 2%;
     font-size: 1.64rem;
   }
-}
 
-#nav div {
-  margin-top: 2%;
-  font-size: 1.64rem;
+  .main {
+    padding-left: 0px;
+  }
 }
 

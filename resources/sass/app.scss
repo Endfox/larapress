@@ -23,6 +23,49 @@ nav{
 	background-size:250%;
 }
 
+
+#nav{
+	div{
+		margin-top:2%;
+		font-size:$h5-fontsize;
+	}
+}
+
+.dropdown-content{
+	min-width: 200px;
+	margin:0%;
+	margin-left: -1px;
+	z-index: 1;
+	max-height: auto;
+	padding-top:3%;
+	background:none;
+	li{
+	background:white;
+	}
+}
+
+#sidenavelements{
+	margin-top:4.8%;
+	z-index:0;
+}
+
+.main{
+	padding-top:2%;
+ 	padding-left: 300px;
+}
+
+.col{
+	.card{
+		padding:2%;
+		span{
+			text-align:center;
+		}
+	}
+}
+
+
+
+
 @media #{$medium-and-down} {
 	nav{
 		.brand-logo{
@@ -36,11 +79,8 @@ nav{
 			font-size:$h5-fontsize;
 		}
 	}
-}
 
-#nav{
-	div{
-		margin-top:2%;
-		font-size:$h5-fontsize;
+	.main{
+		padding-left:0px;
 	}
 }
