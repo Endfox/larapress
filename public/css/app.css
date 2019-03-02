@@ -9273,14 +9273,30 @@ nav .brand-logo {
   margin-left: 2%;
 }
 
+nav div form {
+  margin-left: 700px;
+  margin-right: 300px;
+}
+
 .parallax,
 .parallax-container {
   background: rgba(0, 0, 0, 0.8);
+  background-size: 250%;
 }
 
 @media only screen and (max-width : 992px) {
   nav .brand-logo {
     margin-left: 0px;
   }
+
+  #nav div {
+    margin-top: 2%;
+    font-size: 1.64rem;
+  }
+}
+
+#nav div {
+  margin-top: 2%;
+  font-size: 1.64rem;
 }
 

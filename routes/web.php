@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@home')->name('home');
+
+Auth::routes();
+
+
+Route::get('/larapress/admin','AdminController@loginForm');
+
+Route::post('/larapress/admin','AdminController@loginValidation')->name('loginValidation');
+
+Route::get('/larapress/admin/dashboard','AdminController@dashboard')->name('dashboardAdmin');

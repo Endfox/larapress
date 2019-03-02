@@ -2,7 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
-class PageDatabaseSeeder extends Seeder
+use App\Page;
+
+class PageTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,5 +14,8 @@ class PageDatabaseSeeder extends Seeder
     public function run()
     {
         //
+        Page::create([
+        	'name' => 'Inicio'
+        ]);
     }
 }
