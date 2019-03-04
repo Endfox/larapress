@@ -9,27 +9,34 @@
 		<link rel="stylesheet" href="{{asset('css/app.css')}}" />
 	</head>
 	<body>
-		<div class="container"> 
-			<div class="card" style="margin-top:15%;">
-				<div class="card-content">
-					<span class="card-title center">Larapress.</span>
-					<span class="card-title center">Inicio de sesión.</span>
-					<div class="container">
-						<form method="post" action="{{route('loginValidation')}}">
-							@csrf
-							<div class="input-field col s6">
-								<input id="email" type="email" class="validate" name="email">
-								<label for="email">Correo electrónico.</label>
-							</div>
-							<div class="input-field col s6">
-								<input id="password" type="password" class="validate" name="password">
-								<label for="password">Contraseña.</label>
-							</div>
-							<div class="input-field col s2 center">
-								<button type="submit" class="btn-large wave-effects">Ingresar</button>
-							</div>
-						</form>
-
+		<div class="container">
+			<div class="row">
+				<div class="card col s12 xl8 offset-xl2" style="margin-top:10%;">
+					<div class="card-content center">
+						<span class="card-title center">Larapress.</span>
+						<span class="card-title center">Inicio de sesión.</span>
+						<div class="container">
+							<form method="post" action="{{route('loginValidation')}}">
+								@csrf
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="email" type="email" class="validate" name="email">
+										<label for="email">Correo electrónico.</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="password" type="password" class="validate" name="password">
+										<label for="password">Contraseña.</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s12 center">
+										<button type="submit" class="btn-large wave-effects">Ingresar</button>
+									</div>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>

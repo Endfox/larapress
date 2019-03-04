@@ -13,9 +13,10 @@ class PageTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
         Page::create([
-        	'name' => 'Inicio'
+        	'name' => 'Inicio',
+            'url_name' => '/'
         ]);
     }
 }

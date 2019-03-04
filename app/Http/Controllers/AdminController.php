@@ -8,7 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+
+use Illuminate\Support\Str as Str;
+
 use App\Post;
+use App\Page;
 
 class AdminController extends Controller
 { 
@@ -27,7 +31,12 @@ class AdminController extends Controller
     use AuthenticatesUsers;
 
     public function loginForm(){
-    	return view('admin.login');
+        if(Auth::guard('admin')->check()==false){
+            return view('admin.login');
+        }
+        else{
+            return redirect()->route('adminDashboard');
+        }
     }
 
     public function loginValidation(){
@@ -53,17 +62,31 @@ class AdminController extends Controller
             }
         }
         catch(\Exception $e){
-
         }
     }
 
     public function dashboard(){
+        $user = Auth::guard('admin')->user();
+        $pages = Page::all();
         $posts = Post::orderBy('id','desc')->take(5)->get(['title','slug_url']);
-        return view('admin.dashboard',['posts'=>$posts]);
+        return view('admin.dashboard',['posts'=>$posts,'pages' => $pages]);
     }
 
     public function closeSession(){
          Auth('admin')->logout();
          return redirect()->route('loginForm');
+    }
+
+    public function pages(){
+        $pages = Page::all();
+        return view('admin.pages.index',['pages' => $pages]);
+    }
+
+    public function savePage(Request $r){
+        $page = new Page();
+        $page->name = $r->name;
+        $page->url_name = Str::slug($r->url);
+        $page->save();
+        return redirect()->route('adminPages');
     }
 }

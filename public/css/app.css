@@ -9285,6 +9285,7 @@ nav div form {
 }
 
 #nav div {
+  text-align: center;
   margin-top: 2%;
   font-size: 1.64rem;
 }
@@ -9318,6 +9319,10 @@ nav div form {
 }
 
 .col .card span {
+  text-align: center;
+}
+
+.card-title {
   text-align: center;
 }
 

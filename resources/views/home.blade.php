@@ -48,11 +48,19 @@
             <div class="container">
                 <div class="row" id="nav">
                     @foreach($pages as $page)
+                    @if($page->url_name=='/')
                     <div class="col s2">
                         <a class="white-text" href="{{route('home')}}">
                             {{$page->name}}
                         </a>
                     </div>
+                    @else
+                    <div class="col s2">
+                        <a class="white-text" href="page/{{$page->url_name}}">
+                            {{$page->name}}
+                        </a>
+                    </div>
+                    @endif
                     @endforeach
                 </div>
             </div>
@@ -74,7 +82,40 @@
         </div>
         <div class="container">
             <div class="row">
-                
+                @foreach($posts as $post)
+                <div class="col s12 xl6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{asset('img/space.jpg')}}" alt="Image post">
+                        </div>
+                        <div class="card-content">
+                            <a class="blue-text" href="post/{{$post->slug_url}}">
+                                <span class="card-title">{{$post->title}}</span>
+                            </a>
+                            <p>
+                                {!! substr($post->content,0,50)!!}
+                            </p>
+                            
+                        </div>
+                        <div class="card-action">
+                            <div class="row">
+                                <div class="col s3">
+                                    <span>
+                                        <i class="material-icons prefix">comment</i>
+                                        {{count($post->comments)}}
+                                    </span>
+                                </div>
+                                <div class="col s3">
+                                    <span style="margin-left:10%;">
+                                        <i class="material-icons prefix">star</i>
+                                        {{count($post->comments)}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
         <div id="modal1" class="modal">
