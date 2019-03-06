@@ -33,3 +33,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app'
 });
+
+
+
+window.onload = function(){
+	setTimeout(func1,5000);
+}
+
+function func1(){
+	document.getElementById('time').style.display='none';
+}

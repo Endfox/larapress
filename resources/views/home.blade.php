@@ -11,13 +11,34 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}" />
     </head>
     <body>
+        @if(Session::has('message'))
+        <div class="row" id="time">
+            <h5 class="black-text center">{{ Session::get('message') }}</h5>
+        </div>
+        @endif
+        @if($errors->has('email'))
+        <div class="row" id="time">
+            <h5 class="red-text ligthed-3 center">{{ $errors->first('email') }}</h5>
+        </div>
+        @endif
         <div class="navbar-fixed">
+            
             <nav class="grey darken-4">
                 <div class="nav-wrapper">
                     <a href="{{route('home')}}" class="brand-logo">Larapress</a>
                     <ul class="right hide-on-med-and-down">
+                        @if(auth('user')->check()==true)
+                        <li>
+                            <a class="dropdown-trigger" href="#!" data-target="dropdown1">{{auth('user')->user()->name}}
+                                <i class="material-icons right">arrow_drop_down</i>
+                            </a>
+                        </li>
+                        <li><a ></a></li>
+                        @else
+                        
                         <li><a class="modal-trigger waves-effect" href="#modal1">Registrate</a></li>
                         <li><a class="modal-trigger waves-effect" href="#modal2">Inicia Sesión</a></li>
+                        @endif
                     </ul>
                     <form action="">
                         <div class="input-field">
@@ -44,6 +65,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="row grey darken-3">
             <div class="container">
                 <div class="row" id="nav">
@@ -119,19 +141,69 @@
             </div>
         </div>
         <div id="modal1" class="modal">
-            <div class="modal-content center grey darken-4 white-text">
-                <h4>Formulario de registro</h4>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <div class="modal-content center">
+                <h4>Registro</h4>
+                <form action="{{route('register')}}" method="post">
+                    @csrf
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">face</i>
+                            <input type="text" name="name" id="name" required>
+                            <label for="name">Nombre de usuario</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">drafts</i>
+                            <input type="email" name="email" id="email" required>
+                            <label for="email">Correo electrónico.</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">dialpad</i>
+                            <input type="password" name="password" id="password" required>
+                            <label for="password">Contraseña</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            
+                            <button type="submit" class=" waves-effect waves-light center btn-large">
+                            <i class="material-icons right">send</i>
+                            Registrarme.</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         <div id="modal2" class="modal">
-            <div class="modal-content center grey darken-4 white-text">
+            <div class="modal-content center">
                 <h4>Formulario de inicio de sesión</h4>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <form action="{{route('login')}}" method="post">
+                    @csrf
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">drafts</i>
+                            <input type="email" name="email" id="email1" required>
+                            <label for="email1">Correo electrónico.</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">dialpad</i>
+                            <input type="password" name="password" id="password1" required>
+                            <label for="password1">Contraseña</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button type="submit" class=" waves-effect waves-light center btn-large">
+                            <i class="material-icons right">send</i>
+                            Ingresar.</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         

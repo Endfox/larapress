@@ -9326,6 +9326,10 @@ nav div form {
   text-align: center;
 }
 
+#registro {
+  background: white;
+}
+
 @media only screen and (max-width : 992px) {
   nav .brand-logo {
     margin-left: 0px;
@@ -9339,5 +9343,10 @@ nav div form {
   .main {
     padding-left: 0px;
   }
+}
+
+#time {
+  padding: 0;
+  margin: 0;
 }
 

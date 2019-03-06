@@ -29,3 +29,10 @@ Route::post('/larapress/admin/pages','AdminController@savePage')->name('savePage
 Route::get('/larapress/admin/posts','AdminController@posts')->name('adminPosts');
 
 Route::get('/page/{name}','PageController@search');
+
+
+Route::post('user/login','UserController@login')->name('login');
+
+Route::post('user/register','UserController@store')->name('register');
+
+Route::get('user/logout','UserController@logout')->name('logout');

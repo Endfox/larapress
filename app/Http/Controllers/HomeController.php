@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Page;
 use App\Post;
+use App\User;
 
 use Illuminate\Http\Request;
 
