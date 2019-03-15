@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Support\Str as Str;
 
+use App\User;
 use App\Post;
 use App\Page;
 
@@ -40,7 +41,7 @@ class AdminController extends Controller
     }
 
     public function loginValidation(){
-    	 try{
+        try{
 
             //Recoge los datos enviados en el formulario  y los valida
             //guardandolos al final en un array en la variable credentials
@@ -61,7 +62,7 @@ class AdminController extends Controller
                 return back()->withErrors(['message' => 'Los datos no son correctos']);
             }
         }
-        catch(\Exception $e){
+            catch(\Exception $e){
         }
     }
 
@@ -88,5 +89,18 @@ class AdminController extends Controller
         $page->url_name = Str::slug($r->url);
         $page->save();
         return redirect()->route('adminPages');
+    }
+
+    public function users(){
+        $users = User::select('name','email')->orderBy('id','desc')->get();
+        return view('admin.users.index',['users'=>$users]);
+    }
+
+    public function posts(){
+        return view('admin.posts.index');
+    }
+
+    public function savePosts(Request $r){
+        dd($r);
     }
 }

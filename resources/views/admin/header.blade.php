@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="es-MX">
 	<head>
 		<meta charset="UTF-8">
@@ -8,6 +8,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!-- Styles -->
 		<link rel="stylesheet" href="{{asset('css/app.css')}}" />
+		<script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
 	</head>
 	<body>
 		<ul id='dropdown1' class='dropdown-content'>
@@ -30,8 +31,8 @@
 		</div>
 		<ul class="sidenav sidenav-fixed" id="sidenavelements">
 			<li><a href="{{route('adminPages')}}"><i class="material-icons">class</i>Paginas.</a></li>
-			<li><a href=""><i class="material-icons">publish</i>Publicaciones.</a></li>
-			<li><a href=""><i class="material-icons">face</i>Usuarios.</a></li>
+			<li><a href="{{route('adminPosts')}}"><i class="material-icons">publish</i>Publicaciones.</a></li>
+			<li><a href="{{route('adminUsers')}}"><i class="material-icons">face</i>Usuarios.</a></li>
 			<li><a href=""><i class="material-icons">build</i>Configuraciones.</a></li>
 		</ul>
 		<div class="main">

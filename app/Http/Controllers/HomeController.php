@@ -13,7 +13,7 @@ class HomeController extends Controller
 
     public function home(){
         $pages = Page::all();
-        $posts = Post::orderBy('id','desc')->paginate(12);
+        $posts = Post::orderBy('id','desc')->paginate(8);
         return view('home',['pages'=>$pages,'posts' => $posts]);
     }
 }

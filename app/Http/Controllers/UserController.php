@@ -13,6 +13,10 @@ class UserController extends Controller
 {
     //
 
+    public function me(){
+        echo "mis favoritos";
+    }
+
     public function login(Request $r){
     	$validate_datas = $r->validate([
     		'email' => 'required | email',

@@ -75,6 +75,38 @@ nav{
 	background:rgba(255,255,255,1);
 }
 
+.card{
+	background-color:rgba(200,200,200,0.2);
+	box-shadow: none;
+	.card-content{
+		.content-text{
+			letter-spacing: 2em !important;
+		}
+	}
+	.card-title{
+		color:black;
+	}
+	.date{
+		color:gray;
+	}
+}
+
+#card-footer{
+	margin-top:0;
+	margin-top:2%;
+	margin-bottom:0%;
+	margin-bottom:2%;
+}
+
+#tags{
+	margin-bottom: 1%;
+}
+
+#post-card{
+	height:550px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
 
 
 @media #{$medium-and-down} {
