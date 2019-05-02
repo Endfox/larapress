@@ -3,11 +3,11 @@
 	<h3>Usuarios.</h3>
 </div>
 <div class="col s12">
-	<div class="card">
+	<div class="card hoverable" id="table">
 		<div class="card-content">
 			<span class="card-title">Usuarios registrados.</span>
 			@if(!empty($users))
-			<table class="highlight centered responsive-table">
+			<table class="centered responsive-table highlight">
 				<thead>
 					<tr>
 						<th>Nombre</th>

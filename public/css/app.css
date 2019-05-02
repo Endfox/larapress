@@ -9330,6 +9330,10 @@ nav div form {
   background: white;
 }
 
+.card#table {
+  background: none;
+}
+
 .card {
   background-color: rgba(200, 200, 200, 0.2);
   box-shadow: none;

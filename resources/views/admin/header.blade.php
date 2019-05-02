@@ -33,6 +33,7 @@
 			<li><a href="{{route('adminPages')}}"><i class="material-icons">class</i>Paginas.</a></li>
 			<li><a href="{{route('adminPosts')}}"><i class="material-icons">publish</i>Publicaciones.</a></li>
 			<li><a href="{{route('adminUsers')}}"><i class="material-icons">face</i>Usuarios.</a></li>
+			<li><a href="{{route('adminMedia')}}"><i class="material-icons">burst_mode</i>Media.</a></li>
 			<li><a href=""><i class="material-icons">build</i>Configuraciones.</a></li>
 		</ul>
 		<div class="main">

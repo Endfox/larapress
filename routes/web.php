@@ -27,6 +27,8 @@ Route::post('/larapress/admin/pages','AdminController@savePage')->name('savePage
 
 Route::get('/larapress/admin/users','AdminController@users')->name('adminUsers');
 
+Route::get('/larapress/admin/media','AdminController@media')->name('adminMedia');
+
 Route::get('/larapress/admin/posts','AdminController@posts')->name('adminPosts');
 Route::post('/larapress/admin/posts','AdminController@savePosts')->name('adminSavePosts');
 

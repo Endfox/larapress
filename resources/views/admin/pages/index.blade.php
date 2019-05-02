@@ -24,16 +24,16 @@
 	</div>
 	<div class="row">
 		<div class="input-field col s12 center">
-			<button type="submit" class=" btn-flat btn-large">Guardar</button>
+			<button type="submit" class="btn-large wave-effects">Guardar</button>
 		</div>
 	</div>
 </form>
 <div class="col s12">
-	<div class="card">
+	<div class="card" id="table">
 		<div class="card-content">
 			<span class="card-title">Páginas añadidas.</span>
 			@if(!empty($pages))
-			<table class="highlight centered responsive-table">
+			<table class="centered responsive-table highlight">
 				<thead>
 					<tr>
 						<th>Nombre</th>
